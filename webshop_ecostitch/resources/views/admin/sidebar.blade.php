@@ -16,7 +16,7 @@
                 <li>
                     <a href="{{url('view_category')}}"> <i class="icon-grid"></i>Category </a>
                 </li>
-               
+
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="#">Page</a></li>
