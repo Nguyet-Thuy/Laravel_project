@@ -17,10 +17,35 @@
         @csrf
         @method('patch')
 
+        <div class="form-group">
+        <label for="avatar">Avatar</label>
+        <hr>
+        @if ($user->avatar)
+        <img src="{{ asset('storage/' . $user->avatar) }}" alt="Avatar" width="100">
+        @else
+        <img src="{{ asset('images/no-pic.png') }}" alt="No Avatar" width="100">
+        @endif
+        <input type="file" name="avatar" id="avatar" class="form-control">
+
+        
+    </div>
+
+
         <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        </div>
+
+        <div class="form-group">
+        <x-input-label for="name" :value="__('Biografie')" />
+        <textarea name="bio" id="bio" class="form-control">{{ old('bio', $user->bio) }}</textarea>
+    </div>
+
+        <div>
+            <x-input-label for="birthday" :value="__('Birthday')" />
+            <x-text-input id="birthday" name="birthday" type="text" class="mt-1 block w-full" :value="old('birthday', $user->birthday)" required autofocus autocomplete="birthday" />
+            <x-input-error class="mt-2" :messages="$errors->get('birthday')" />
         </div>
 
         <div>

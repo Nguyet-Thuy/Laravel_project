@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -24,7 +25,7 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    /*public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
 
@@ -34,6 +35,38 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
+        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    }*/
+
+    public function update(ProfileUpdateRequest $request): RedirectResponse
+    {
+        // Verkrijg de ingelogde gebruiker
+        $user = $request->user();
+
+        // Vul de gebruiker met gevalideerde gegevens
+        $user->fill($request->validated());
+
+        // Controleer of het e-mailadres is gewijzigd en reset de verificatietijd
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
+
+        // Verwerk de avatar upload
+        if ($request->hasFile('avatar')) {
+            // Verwijder de oude avatar als deze bestaat
+            if ($user->avatar && Storage::exists('public/' . $user->avatar)) {
+                Storage::delete('public/' . $user->avatar);
+            }
+
+            // Sla de nieuwe afbeelding op
+            $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            $user->avatar = $avatarPath;
+        }
+
+        // Sla de wijzigingen op
+        $user->save();
+
+        // Redirect naar de profielpagina met een succesmelding
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
