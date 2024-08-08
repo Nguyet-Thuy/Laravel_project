@@ -8,20 +8,23 @@
                   <div class="col-md-7">
                     <div class="detail-box"> 
                       <h1>
-                        Welcome To Our <br>
-                        Gift Shop
+                      Welkom bij  <br>
+                      EcoStitch Creations!
                       </h1>
                       <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                      Wij zijn toegewijd aan het creëren van unieke en duurzame naaicreaties voor bewuste consumenten.
+                      Onze handgemaakte collectie, waaronder booksleeves, reusable make-up pads en totebags, kunnen ook op bestelling worden gemaakt met een focus op milieubewustzijn en ethisch vakmanschap.
+                      <hr>
+                      Bij EcoStitch Creations geloven we in de kracht van duurzaamheid en streven we ernaar om prachtige items te leveren die een positieve impact hebben op onze planeet. Sluit je aan bij onze missie naar een groenere toekomst en ontdek onze collectie vandaag nog!
                       </p>
                       <a href="">
-                        Contact Us
+                        Contacteer ons
                       </a>
                     </div>
                   </div>
                   <div class="col-md-5 ">
                     <div class="img-box">
-                      <img style="width:600px" src="images/image3.jpeg" alt="" />
+                      <img style="width:600px" src="images/image4.webp" alt="" />
                     </div>
                   </div>
                 </div>

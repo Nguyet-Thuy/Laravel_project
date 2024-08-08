@@ -2,8 +2,13 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Latest Products
+          Verken de collectie
         </h2>
+      </div>
+      <div>
+        <p>Alles kan op maat gemaakt worden, uniek en met een persoonlijke touch.
+
+Contacteer mij vrijblijvend voor meer info.</h3>
       </div>
       <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3">
@@ -14,12 +19,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Ring
+                  Booksleeve
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $200
+                    €35
                   </span>
                 </h6>
               </div>
@@ -39,12 +44,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Watch
+                  Make-up pads
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $300
+                    €25
                   </span>
                 </h6>
               </div>
@@ -64,12 +69,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Teddy Bear
+                  Make-up pads
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $110
+                    €25
                   </span>
                 </h6>
               </div>
@@ -89,12 +94,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Flower Bouquet
+                  Make-up pads
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $45
+                    €25
                   </span>
                 </h6>
               </div>
@@ -114,12 +119,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Teddy Bear
+                  Booksleeve
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $95
+                    €35
                   </span>
                 </h6>
               </div>
@@ -139,12 +144,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Flower Bouquet
+                  Booksleeve
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $70
+                    €35
                   </span>
                 </h6>
               </div>
@@ -164,12 +169,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Watch
+                  Booksleeve
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $400
+                    €35
                   </span>
                 </h6>
               </div>
@@ -189,12 +194,12 @@
               </div>
               <div class="detail-box">
                 <h6>
-                  Ring
+                  Totebag
                 </h6>
                 <h6>
-                  Price
+                  Prijs
                   <span>
-                    $450
+                    €25
                   </span>
                 </h6>
               </div>

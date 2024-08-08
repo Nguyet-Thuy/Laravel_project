@@ -29,7 +29,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="info_form ">
               <h5>
-                Newsletter
+                Nieuwsbrief
               </h5>
               <form action="#">
                 <input type="email" placeholder="Enter your email">
@@ -49,20 +49,20 @@
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              CONTACT US
+              CONTACTEER ONS
             </h6>
             <div class="info_link-box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
+                <span> Markebekestraat 115 8510 Marke België </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+01 12345678901</span>
+                <span>056/84.64.75</span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> demo@gmail.com</span>
+                <span> ecostitchcreations@gmail.com</span>
               </a>
             </div>
           </div>
@@ -74,7 +74,7 @@
       <div class="container">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Web Tech Knowledge</a>
+          <a href="https://html.design/">EcoStitch Creations</a>
         </p>
       </div>
     </footer>
