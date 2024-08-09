@@ -20,11 +20,10 @@
               </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{ route('faq.faq') }}">FAQ</a>
+              <a class="nav-link" href="why.html">
+                Why Us
+              </a>
             </li>
-            
-
-
             <li class="nav-item">
               <a class="nav-link" href="testimonial.html">
                 Testimonial
