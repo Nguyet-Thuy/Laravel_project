@@ -14,23 +14,21 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
+           
             <li class="nav-item">
-              <a class="nav-link" href="shop.html">
-                Shop
+              <a class="nav-link" href="newsposts.html">
+                News Posts
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="why.html">
-                Why Us
+              <a class="nav-link" href="">
+                FAQ
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
-                Testimonial
+              <a class="nav-link" href="aboutpage.html">
+                About Page
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
           </ul>
           <div class="user_option">

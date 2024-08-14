@@ -212,10 +212,5 @@ Contacteer mij vrijblijvend voor meer info.</h3>
           </div>
         </div>
       </div>
-      <div class="btn-box">
-        <a href="">
-          View All Products
-        </a>
-      </div>
     </div>
   </section>
