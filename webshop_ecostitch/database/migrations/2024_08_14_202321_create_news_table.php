@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-      //  Schema::create('faq_categories', function (Blueprint $table) {
-       //     $table->id();
-      //      $table->string('name');
-        //    $table->timestamps();
-       // });
+        Schema::create('news', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('cover_image');
+            $table->text('content');
+            $table->date('publishing_date');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('faq_categories');
+        Schema::dropIfExists('news');
     }
 };

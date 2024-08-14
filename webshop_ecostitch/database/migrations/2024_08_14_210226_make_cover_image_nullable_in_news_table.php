@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('faq_categories', function (Blueprint $table) {
-            //
+        Schema::table('news', function (Blueprint $table) {
+            $table->string('cover_image')->default('default_image.jpg')->change();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('faq_categories', function (Blueprint $table) {
-            //
+        Schema::table('news', function (Blueprint $table) {
+            $table->string('cover_image')->default(null)->change();
         });
     }
 };

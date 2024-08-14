@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('faq_categories', function (Blueprint $table) {
-            //
+        Schema::table('news', function (Blueprint $table) {
+            $table->timestamp('publishing_date')->nullable()->change();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('faq_categories', function (Blueprint $table) {
-            //
+        Schema::table('news', function (Blueprint $table) {
+            $table->timestamp('publishing_date')->nullable(false)->change();
         });
     }
 };

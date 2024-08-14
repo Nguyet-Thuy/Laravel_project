@@ -34,15 +34,25 @@
 
           <div class="div_deg">
 
-          <h1 style="color: white">Edit Category</h1>
+          <h1 style="color: white">Edit News Post</h1>
 
-          <form action="{{ url('update_category',$data->id) }}" method="post">
+          <form action="{{ url('update_news',$data->id) }}" method="post">
 
           @csrf
 
-            <label for="title">Category:</label>
-            <input type="text" name="category" value="{{$data->category_name}}">
-           
+            <label for="title">Title:</label>
+            <input type="text" name="title" value="{{$data->title}}">
+            <hr>
+            <label for="title">Cover Image:</label>
+            <input type="text" name="cover_image" value="{{$data->cover_image}}">
+            <hr>
+            <label for="title">Content:</label>
+            <input type="text" name="content" value="{{$data->content}}">
+            <hr>
+            <label for="title">Publishing Date:</label>
+            <input type="text" name="publishing_date" value="{{$data->publishing_date}}">
+            <hr>
+            <input class="btn btn-primary"type="submit" value="Edit News Post">
           </form>
 
           </div>
