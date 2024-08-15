@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\NewsController;
 
 Route::get('/',[HomeController::class,'home']); 
 
@@ -67,3 +67,9 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 
 route::get('view_contact',[AdminController::class,'view_contact'])-> 
     middleware(['auth','admin']);
+
+
+    //News
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+
+Route::get('/home', [HomeController::class, 'home'])->name('home.index');

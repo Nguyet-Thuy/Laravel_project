@@ -17,9 +17,6 @@
                       <hr>
                       Bij EcoStitch Creations geloven we in de kracht van duurzaamheid en streven we ernaar om prachtige items te leveren die een positieve impact hebben op onze planeet. Sluit je aan bij onze missie naar een groenere toekomst en ontdek onze collectie vandaag nog!
                       </p>
-                      <a href="">
-                        Contacteer ons
-                      </a>
                     </div>
                   </div>
                   <div class="col-md-5 ">
