@@ -61,7 +61,7 @@ route::get('edit_news/{id}',[AdminController::class,'edit_news'])->
 route::post('update_news/{id}',[AdminController::class,'update_news'])-> 
     middleware(['auth','admin']);
 
-//Contact
+    //Contact
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
@@ -73,3 +73,24 @@ route::get('view_contact',[AdminController::class,'view_contact'])->
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 
 Route::get('/home', [HomeController::class, 'home'])->name('home.index');
+
+
+    //faqCategory
+route::get('view_faqCategory',[AdminController::class,'view_faqCategory'])-> 
+    middleware(['auth','admin']);
+
+route::post('add_faqCategory',[AdminController::class,'add_faqCategory'])-> 
+    middleware(['auth','admin']);
+
+route::get('delete_faqCategory/{id}',[AdminController::class,'delete_faqCategory'])-> 
+    middleware(['auth','admin']);
+
+route::get('edit_faqCategory/{id}',[AdminController::class,'edit_faqCategory'])-> 
+    middleware(['auth','admin']);
+
+Route::put('update_faqCategory/{id}', [AdminController::class, 'update_faqCategory'])->name('update_faqCategory');
+
+
+
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
