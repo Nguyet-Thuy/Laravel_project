@@ -39,7 +39,7 @@ route::get('delete_category/{id}',[AdminController::class,'delete_category'])->
 route::get('edit_category/{id}',[AdminController::class,'edit_category'])-> 
     middleware(['auth','admin']);
 
-route::post('update_category/{id}',[AdminController::class,'update_news'])-> 
+route::post('update_category/{id}',[AdminController::class,'update_category'])-> 
     middleware(['auth','admin']);
 
 
@@ -47,7 +47,6 @@ route::post('update_category/{id}',[AdminController::class,'update_news'])->
 
 route::get('view_news',[AdminController::class,'view_news'])-> 
     middleware(['auth','admin']);
-
 
 route::post('add_news',[AdminController::class,'add_news'])-> 
     middleware(['auth','admin']);

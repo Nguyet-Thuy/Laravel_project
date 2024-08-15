@@ -16,7 +16,7 @@
             </li>
            
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('news-posts.index') }}">
+              <a class="nav-link" href="">
                 News Posts
               </a>
             </li>
