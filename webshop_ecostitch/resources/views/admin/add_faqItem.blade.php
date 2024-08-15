@@ -6,44 +6,43 @@
 
    <style type="text/css">
 
-    .div_deg
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 60px;
-    }
-    h1{
-        color: white;
-    }
-    label
-    {
-        display: inline-block;
-        width: 200px;
-        font-size: 18px!important;
-        color: white!important;
-
-    }
-
-    input[type='text']
-    {
-        width: 350px;
-        height: 50px;
-    }
-
-    textarea{
-        width: 450px;
-        height: 80px;
-    }
-
-    .input_deg
+.div_deg
 {
-    padding: 15px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+h1{
+    color: white;
+}
+label
+{
+    display: inline-block;
+    width: 200px;
+    font-size: 18px!important;
+    color: white!important;
+
 }
 
-   </style>
+input[type='text']
+{
+    width: 350px;
+    height: 50px;
+}
 
+textarea{
+    width: 450px;
+    height: 80px;
+}
+
+.input_deg
+{
+    padding: 15px;
+
+}
+
+</style>
   </head>
   <body>
 
@@ -56,37 +55,38 @@
         <div class="page-header">
           <div class="container-fluid">
 
-          <h1>Add Question and answer</h1>
+          <h1>Add FAQ</h1>
           <div class="div_deg">
 
-          <form action="{{url('upload_faqItem')}}" method="post" enctype="multipart/form-data">
+          <form action="{{url('upload_faqItem')}}" method="post">
 
           @csrf
 
           <div class="input_deg">
-            <label>FAQ Category</label>
-            <select name="faqCategory" required>
-            <option>Select a Option</option>
+            <label>FAQ category</label>
+            <select name="category" required>
+                <option>Select a Option</option>
 
-            @foreach($faqCategory as $faqCategory)
+                @foreach($faqCategory as $faqCategory)
 
-            <option value="{{$faqCategory->faqCategory_name}}">{{$faqCategory->faqCategory_name}}</option>
+                <option value="{{$faqCategory->faqCategory_name}}">{{$faqCategory->faqCategory_name}}</option>
 
-            @endforeach
+                @endforeach
 
             </select>
           </div>
+
           <div class="input_deg">
             <label>Question</label>
-            <textarea name="question" required></textarea>
+            <input type="text" name="question" required>
           </div>
           <div class="input_deg">
             <label>Answer</label>
             <textarea name="answer" required></textarea>
           </div>
-
+          
           <div class="input_deg">
-            <input class="btn btn-success" type="submit" value="Add Question">
+            <input class="btn btn-success" type="submit" value="Add Product">
           </div>
 
           </form>

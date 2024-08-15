@@ -218,6 +218,12 @@ public function upload_product(Request $request)
     return redirect()->back(); 
 }
 
+public function view_product()
+{
+    $product = Product::all();
+    return view('admin.view_product',compact('product'));
+}
+
 
 //FAQ Item
 
@@ -240,5 +246,10 @@ public function upload_faqItem(Request $request)
     return redirect()->back(); 
 }
 
+public function view_faqItem()
+{
+    $faqItem = FaqItem::all();
+    return view('admin.view_faqItem',compact('faqItem'));
+}
  
 }

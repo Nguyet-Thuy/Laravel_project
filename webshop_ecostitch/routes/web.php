@@ -101,10 +101,16 @@ route::get('add_product',[AdminController::class,'add_product'])->
 route::post('upload_product',[AdminController::class,'upload_product'])-> 
     middleware(['auth','admin']);
 
+route::get('view_product',[AdminController::class,'view_product'])-> 
+    middleware(['auth','admin']);
+
 //FAQ Item
 
 route::get('add_faqItem',[AdminController::class,'add_faqItem'])-> 
     middleware(['auth','admin']);
 
 route::post('upload_faqItem',[AdminController::class,'upload_faqItem'])-> 
+    middleware(['auth','admin']);
+
+route::get('view_faqItem',[AdminController::class,'view_faqItem'])-> 
     middleware(['auth','admin']);
