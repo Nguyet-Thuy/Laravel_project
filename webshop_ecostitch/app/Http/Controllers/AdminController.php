@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Category;
-
 use App\Models\News;
-
 use App\Models\Contact;
-
 use App\Models\FaqCategory;
+use App\Models\Product;
+use App\Models\FaqItem;
 
 
 
@@ -170,22 +168,77 @@ class AdminController extends Controller
 
     public function edit_faqCategory($id)
 {
-    $data = FaqCategory::find($id); // Retrieve the category with the given ID
-    return view('admin.edit_faqCategory', compact('data')); // Pass it to the view
+    $data = FaqCategory::find($id); 
+    return view('admin.edit_faqCategory', compact('data')); 
 }
 
 
 public function update_faqCategory(Request $request, $id)
 {
-    $data = FaqCategory::find($id); // Find the category by ID
+    $data = FaqCategory::find($id); 
 
-    $data->faqCategory_name = $request->faqCategory_name; // Update with new value from the form
+    $data->faqCategory_name = $request->faqCategory_name; 
 
-    $data->save(); // Save changes to the database
+    $data->save(); 
 
-    return redirect('/view_faqCategory'); // Redirect to the list view
+    return redirect('/view_faqCategory'); 
 }
 
+//Product
+
+public function add_product()
+{
+    $category = Category::all();
+    return view('admin.add_product',compact('category'));
+}
+
+public function upload_product(Request $request)
+{
+    $data = new Product; 
+
+    $data->title = $request->title; 
+    $data->description = $request->description;
+    $data->price = $request->price;
+    $data->quantity = $request->quantity;
+    $data->category = $request->category;
+
+    $image = $request->image;
+
+    if($image)
+    {
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('products',$imagename);
+
+        $data->image = $imagename;
+    }
+
+    $data->save(); 
+
+    return redirect()->back(); 
+}
+
+
+//FAQ Item
+
+public function add_faqItem()
+{
+    $faqCategory = FaqCategory::all();
+    return view('admin.add_faqItem',compact('faqCategory'));
+}
+
+public function upload_faqItem(Request $request)
+{
+    $data = new FaqItem; 
+
+    $data->category = $request->category;
+    $data->question = $request->question; 
+    $data->answer = $request->answer;
+
+    $data->save(); 
+
+    return redirect()->back(); 
+}
 
  
 }

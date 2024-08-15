@@ -19,7 +19,7 @@
 
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Products</a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="#">Add Product</a></li>
+                    <li><a href="{{url('add_product')}}">Add Product</a></li>
                     <li><a href="#">Page</a></li>
                     <li><a href="#">Page</a></li>
                   </ul>
@@ -39,7 +39,7 @@
 
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>FAQ Question and Answers</a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="#">Add Question</a></li>
+                    <li><a href="{{url('add_faqItem')}}">Add Question and Answer</a></li>
                     <li><a href="#">Page</a></li>
                     <li><a href="#">Page</a></li>
                   </ul>

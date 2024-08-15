@@ -26,6 +26,9 @@ require __DIR__.'/auth.php';
 route::get('admin/dashboard',[HomeController::class,'index'])-> 
     middleware(['auth','admin']);
 
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+//Product Category
 
 route::get('view_category',[AdminController::class,'view_category'])-> 
     middleware(['auth','admin']);
@@ -90,7 +93,18 @@ route::get('edit_faqCategory/{id}',[AdminController::class,'edit_faqCategory'])-
 
 Route::put('update_faqCategory/{id}', [AdminController::class, 'update_faqCategory'])->name('update_faqCategory');
 
+//Product
 
+route::get('add_product',[AdminController::class,'add_product'])-> 
+    middleware(['auth','admin']);
 
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+route::post('upload_product',[AdminController::class,'upload_product'])-> 
+    middleware(['auth','admin']);
 
+//FAQ Item
+
+route::get('add_faqItem',[AdminController::class,'add_faqItem'])-> 
+    middleware(['auth','admin']);
+
+route::post('upload_faqItem',[AdminController::class,'upload_faqItem'])-> 
+    middleware(['auth','admin']);
