@@ -8,6 +8,9 @@ use App\Models\Category;
 
 use App\Models\News;
 
+use App\Models\Contact;
+
+
 
 class AdminController extends Controller
 {
@@ -111,5 +114,11 @@ class AdminController extends Controller
         $data->save();
 
         return redirect('/view_news');
+    }
+
+    public function view_contact()
+    {
+        $data = Contact::all();
+        return view('admin.contact',compact('data'));
     }
 }

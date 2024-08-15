@@ -20,6 +20,10 @@
                 <li>
                     <a href="{{url('view_news')}}"> <i class="icon-grid"></i>News Posts </a>
                 </li>
+
+                <li>
+                    <a href="{{url('view_contact')}}"> <i class="icon-grid"></i>Contact sheets </a>
+                </li>
                
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">

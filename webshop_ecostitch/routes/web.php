@@ -64,3 +64,6 @@ route::post('update_news/{id}',[AdminController::class,'update_news'])->
 //Contact
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+route::get('view_contact',[AdminController::class,'view_contact'])-> 
+    middleware(['auth','admin']);
