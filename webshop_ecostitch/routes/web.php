@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/',[HomeController::class,'home']); 
@@ -60,4 +61,6 @@ route::get('edit_news/{id}',[AdminController::class,'edit_news'])->
 route::post('update_news/{id}',[AdminController::class,'update_news'])-> 
     middleware(['auth','admin']);
 
+//Contact
 
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
