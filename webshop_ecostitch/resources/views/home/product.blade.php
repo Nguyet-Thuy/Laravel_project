@@ -31,7 +31,10 @@ Contacteer mij vrijblijvend voor meer info.</h3>
                 </h6>
               </div>
             <div style="padding:15px">
-              <a class="btn btn-success" href="{{url('product_details',$products->id)}}">Meer info</a>
+              <a class="btn btn-success" href="{{url('product_details',$products->id)}}">Info</a>
+
+              <a class="btn btn-primary" href="{{url('add_cart',$products->id)}}">In Winkelwagen</a>
+              
             </div>
           </div>
         </div>

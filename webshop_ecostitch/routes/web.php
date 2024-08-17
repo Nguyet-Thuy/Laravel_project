@@ -166,3 +166,9 @@ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 
 Route::get('/about', function () {return view('about');})->name('about');
 
+//Winkelwagen
+
+route::get('add_cart/{id}',[HomeController::class,'add_cart'])
+->middleware(['auth', 'verified']);
+
+Route::get('/home', [HomeController::class, 'login_home'])->name('home.index');
