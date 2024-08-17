@@ -27,7 +27,7 @@
   <!-- end shop section -->
 
 
-  @include('home.shop')
+  @include('home.product')
 
 
   <!-- contact section -->

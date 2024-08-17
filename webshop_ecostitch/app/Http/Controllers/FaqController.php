@@ -11,8 +11,9 @@ class FaqController extends Controller
     public function index()
     {
         
-        $categories = FaqCategory::with('items')->get();
+        $categories = FaqCategory::all();
+        $faqItem = FaqItem::all();
 
-        return view('faq.index', compact('categories'));
+        return view('faq.index', compact('categories','faqItem'));
     }
 }
