@@ -16,7 +16,6 @@ Contacteer mij vrijblijvend voor meer info.</h3>
 
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
               <div class="img-box">
                 <img src="products/{{$products->image}}" alt="">
               </div>
@@ -31,7 +30,9 @@ Contacteer mij vrijblijvend voor meer info.</h3>
                   </span>
                 </h6>
               </div>
-            </a>
+            <div style="padding:15px">
+              <a class="btn btn-success" href="{{url('product_details',$products->id)}}">Meer info</a>
+            </div>
           </div>
         </div>
 
