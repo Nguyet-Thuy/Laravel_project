@@ -27,7 +27,7 @@ Contacteer mij vrijblijvend voor meer info.</h3>
                 <h6>
                   Prijs
                   <span>
-                    {{$products->price}}
+                    €{{$products->price}}
                   </span>
                 </h6>
               </div>
