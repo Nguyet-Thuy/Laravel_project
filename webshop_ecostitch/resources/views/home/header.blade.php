@@ -21,12 +21,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="{{ route('faq.index') }}">
                 FAQ
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="aboutpage.html">
+              <a class="nav-link" href="{{ route('about') }}">
                 About Page
               </a>
             </li>

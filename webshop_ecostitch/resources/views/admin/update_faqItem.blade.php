@@ -5,44 +5,34 @@
    @include('admin.css')
 
    <style type="text/css">
-
-.div_deg
+    .div_deg
 {
-    display: flex;
+    diplay: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-}
-h1{
-    color: white;
-}
-label
-{
-    display: inline-block;
-    width: 200px;
-    font-size: 18px!important;
-    color: white!important;
+}    
 
+label 
+{
+    display: inline_block;
+    width: 200px;
+    padding: 20px;
 }
 
 input[type='text']
 {
-    width: 350px;
-    height: 50px;
+    width: 300px;
+    heigth: 50px;
 }
 
-textarea{
-    width: 450px;
-    height: 80px;
-}
-
-.input_deg
+textarea
 {
-    padding: 15px;
-
+    width: 450px;
+    height: 100px;
 }
 
 </style>
+
   </head>
   <body>
 
@@ -55,17 +45,18 @@ textarea{
         <div class="page-header">
           <div class="container-fluid">
 
-          <h1>Add FAQ</h1>
+          <h2>Update FAQ</h2>
+
           <div class="div_deg">
+            <form action="{{url('edit_faqItem',$data->id)}}" method="post">
 
-          <form action="{{url('upload_faqItem')}}" method="post">
+            @csrf
 
-          @csrf
+            <div>
+                <label for="">category</label>
+                <select name="category">
 
-          <div class="input_deg">
-            <label>FAQ category</label>
-            <select name="category" required>
-                <option>Select a Option</option>
+                <option value="{{$data->category}}">{{$data->category}}</option>
 
                 @foreach($faqCategory as $faqCategory)
 
@@ -73,25 +64,26 @@ textarea{
 
                 @endforeach
 
-            </select>
+                </select>
+            </div>
+
+            <div>
+                <label>Question</label>
+                <textarea name="question">{{($data->question)}}</textarea>
+            </div>
+
+            <div>
+                <label>Answer</label>
+                <textarea name="answer">{{($data->answer)}}</textarea>
+            </div>
+
+            <div>
+                <input class="btn btn-success" type="submit" value="Update Product">
+            </div>
+
+            </form>
           </div>
 
-          <div class="input_deg">
-            <label>Question</label>
-            <input type="text" name="question" required>
-          </div>
-          <div class="input_deg">
-            <label>Answer</label>
-            <textarea name="answer" required></textarea>
-          </div>
-          
-          <div class="input_deg">
-            <input class="btn btn-success" type="submit" value="Add FAQ">
-          </div>
-
-          </form>
-          </div>
-          
           </div>
       </div>
     </div>

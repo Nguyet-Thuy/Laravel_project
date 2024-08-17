@@ -220,10 +220,58 @@ public function upload_product(Request $request)
 
 public function view_product()
 {
-    $product = Product::all();
+    $product = Product::paginate(5);
     return view('admin.view_product',compact('product'));
 }
 
+public function delete_product($id)
+{
+    $data = Product::find($id);
+
+    $image_path = public_path('products/'.$data->image);
+
+    if(file_exists($image_path))
+    {
+        unlink($image_path);
+    }
+
+    $data->delete();
+
+    return redirect()->back();
+}
+
+public function update_product($id)
+{
+    $data = Product::find($id);
+
+    $category = Category::all();
+
+    return view('admin.update_page', compact('data','category'));
+}
+
+public function edit_product(Request $request,$id)
+{
+    $data = Product::find($id);
+
+    $data->title = $request->title;
+    $data->description  = $request->description;
+    $data->price = $request->price;
+    $data->quantity = $request->quantity;
+    $data->category = $request->category;
+
+    $image = $request->image;
+
+    if($image)
+    {
+        $imagename = time().'.'.$image-> getClientOriginalExtension();
+
+        $request->image->move('products',$imagename);
+
+        $data->image = $imagename;
+    }
+    $data->save();
+    return redirect('/view_product');
+}
 
 //FAQ Item
 
@@ -248,8 +296,39 @@ public function upload_faqItem(Request $request)
 
 public function view_faqItem()
 {
-    $faqItem = FaqItem::all();
+    $faqItem = FaqItem::paginate(5);
     return view('admin.view_faqItem',compact('faqItem'));
 }
- 
+
+public function delete_faqItem($id)
+{
+    $data = FaqItem::find($id);
+
+    $data->delete();
+
+    return redirect()->back();
 }
+
+public function update_faqItem($id)
+{
+    $data = FaqItem::find($id);
+
+    $faqCategory = FaqCategory::all();
+
+    return view('admin.update_faqItem', compact('data','faqCategory'));
+}
+ 
+public function edit_faqItem(Request $request,$id)
+{
+    $data = FaqItem::find($id);
+
+    $data->category = $request->category;
+    $data->question = $request->question;
+    $data->answer  = $request->answer;
+    
+    $data->save();
+    return redirect('/view_faqItem');
+}
+
+}
+

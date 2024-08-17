@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class FaqCategory extends Model
 {
-    use HasFactory;
+    protected $table = 'faq_categories';
 
-    protected $fillable = [
-        
-        'faqCategory_name',
-        
-    ];
+    
+    protected $fillable = ['name'];
+
+    public function items()
+    {
+        return $this->hasMany(FaqItem::class);
+    }
 }

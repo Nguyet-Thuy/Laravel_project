@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\FaqController;
+
 
 Route::get('/',[HomeController::class,'home']); 
 
@@ -103,6 +105,15 @@ route::post('upload_product',[AdminController::class,'upload_product'])->
 
 route::get('view_product',[AdminController::class,'view_product'])-> 
     middleware(['auth','admin']);
+    
+route::get('delete_product/{id}',[AdminController::class,'delete_product'])-> 
+    middleware(['auth','admin']);
+
+route::get('update_product/{id}',[AdminController::class,'update_product'])-> 
+    middleware(['auth','admin']);
+
+route::post('edit_product/{id}',[AdminController::class,'edit_product'])-> 
+    middleware(['auth','admin']);
 
 //FAQ Item
 
@@ -114,3 +125,22 @@ route::post('upload_faqItem',[AdminController::class,'upload_faqItem'])->
 
 route::get('view_faqItem',[AdminController::class,'view_faqItem'])-> 
     middleware(['auth','admin']);
+
+route::get('delete_faqItem/{id}',[AdminController::class,'delete_faqItem'])-> 
+    middleware(['auth','admin']);
+
+route::get('update_faqItem/{id}',[AdminController::class,'update_faqItem'])-> 
+    middleware(['auth','admin']);
+
+route::post('edit_faqItem/{id}',[AdminController::class,'edit_faqItem'])-> 
+    middleware(['auth','admin']);
+
+//FAQ Pagina
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+
+
+//About Pagina
+
+Route::get('/about', function () {return view('about');})->name('about');
+
