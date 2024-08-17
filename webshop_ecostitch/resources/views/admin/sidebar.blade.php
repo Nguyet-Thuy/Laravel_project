@@ -14,6 +14,9 @@
                 <li class="active"><a href="{{ route('admin.index') }}"> <i class="icon-home"></i>Home </a></li>
 
                 <li>
+                    <a href="{{url('view_user')}}"> <i class="icon-grid"></i>Users</a>
+                </li>
+                <li>
                     <a href="{{url('view_category')}}"> <i class="icon-grid"></i>Category </a>
                 </li>
 

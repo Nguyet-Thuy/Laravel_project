@@ -33,6 +33,23 @@ route::get('admin/dashboard',[HomeController::class,'index'])->
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
+
+//User
+route::get('view_user',[AdminController::class,'view_user'])-> 
+    middleware(['auth','admin']);
+
+route::post('add_user',[AdminController::class,'add_user'])-> 
+    middleware(['auth','admin']);
+
+route::get('delete_user/{id}',[AdminController::class,'delete_user'])-> 
+    middleware(['auth','admin']);
+
+route::get('edit_user/{id}',[AdminController::class,'edit_user'])-> 
+    middleware(['auth','admin']);
+
+route::post('update_user/{id}',[AdminController::class,'update_user'])-> 
+    middleware(['auth','admin']);
+
 //Product Category
 
 route::get('view_category',[AdminController::class,'view_category'])-> 

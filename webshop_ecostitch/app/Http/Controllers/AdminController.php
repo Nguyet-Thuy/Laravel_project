@@ -9,6 +9,7 @@ use App\Models\Contact;
 use App\Models\FaqCategory;
 use App\Models\Product;
 use App\Models\FaqItem;
+use App\Models\User;
 
 
 
@@ -19,6 +20,68 @@ class AdminController extends Controller
         // Your code here
         return view('admin.index');
     }
+
+//User
+public function view_user()
+    {
+        $data = User::all();
+        return view('admin.user',compact('data'));
+    }
+
+    public function add_user(Request $request)
+    {
+        $user = new User;
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->bio = $request->bio;
+        $user->avatar = $request->avatar;
+        $user->usertype = $request->usertype;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->birthday = $request->birthday;
+
+        $user->save();
+
+
+        return redirect()->back();
+    }
+
+    public function delete_user($id)
+    {
+        $data = User::find($id);
+
+        $data->delete();
+
+
+        return redirect()->back();
+    }
+
+    public function edit_user($id)
+    {
+        $data = User::find($id);
+
+        return view('admin.edit_user', compact('data'));
+    }
+
+    public function update_user(Request $request,$id)
+    {
+        $data= User::find($id);
+
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->bio = $request->bio;
+        $data->avatar = $request->avatar;
+        $data->usertype = $request->usertype;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+        $data->birthday = $request->birthday;
+
+        $data->save();
+
+        return redirect('/view_user');
+    }
+
 
     //Product Category
     public function view_category()
