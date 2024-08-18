@@ -76,7 +76,7 @@
           <div class="div_deg">
 
             
-          <form action="{{url('add_user')}}" method="post">
+          <form action="{{url('add_user')}}" method="post" enctype="multipart/form-data">
 
           @csrf
             <div>
@@ -154,7 +154,9 @@
                         <td>{{$data->name}}</td>
                         <td>{{$data->email}}</td>
                         <td>{{$data->bio}}</td>
-                        <td>{{$data->avatar}}</td>
+                        <td>
+                            <img height="150" width="150" src="profilePictures/{{$data->avatar}}">
+                        </td>
                         <td>{{$data->usertype}}</td>
                         <td>{{$data->phone}}</td>
                         <td>{{$data->address}}</td>

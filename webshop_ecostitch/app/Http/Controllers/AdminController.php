@@ -43,6 +43,16 @@ public function view_user()
         $user->birthday = $request->birthday;
         $user->password = $request->password;
 
+        $image = $request->avatar;
+
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->avatar->move('profilePictures',$imagename);
+
+            $user->avatar = $imagename;
+        }
+
         $user->save();
 
 
