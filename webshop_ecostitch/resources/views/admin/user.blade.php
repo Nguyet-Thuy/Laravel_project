@@ -128,8 +128,8 @@
         <label for="content">Birthday:</label>
         <input type="date" name="birthday">
 
-                    <input class="btn btn-primary" type="submit" value="Add User">
-                </div>
+        <input class="btn btn-primary" type="submit" value="Add User">
+        </div>
 
           </form>
           </div>

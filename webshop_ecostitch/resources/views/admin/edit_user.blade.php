@@ -50,7 +50,7 @@ textarea{
 
           <h1 style="color: white">Edit User</h1>
 
-          <form action="{{ url('update_user',$data->id) }}" method="post">
+          <form action="{{ url('update_user',$data->id) }}" method="post" enctype="multipart/form-data">
 
           @csrf
             <div>
@@ -89,10 +89,6 @@ textarea{
             <div>
             <label for="title">Birthday:</label>
             <input type="date" name="birthday" value="{{$data->birthday}}">
-            </div>
-            <div>
-            <label for="password" style="display: none;">Password:</label>
-            <input type="password" id="password" name="password" style="display: none;" required>
             </div>
             <div>
             <input class="btn btn-primary"type="submit" value="Edit User">
