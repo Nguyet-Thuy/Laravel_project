@@ -39,9 +39,7 @@
         </h2>
       </div>
       <div>
-        <p>Alles kan op maat gemaakt worden, uniek en met een persoonlijke touch.
-
-Contacteer mij vrijblijvend voor meer info.</h3>
+        <p>Alles kan op maat gemaakt worden, uniek en met een persoonlijke touch. Contacteer ons vrijblijvend voor meer info.</h3>
       </div>
       <div class="row">
 

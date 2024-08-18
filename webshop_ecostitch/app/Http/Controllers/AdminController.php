@@ -10,6 +10,7 @@ use App\Models\FaqCategory;
 use App\Models\Product;
 use App\Models\FaqItem;
 use App\Models\User;
+use App\Models\Order;
 
 
 
@@ -98,7 +99,6 @@ public function view_user()
 
         $category->save();
 
-        toastr()->timeOut(10000)->closeButton()->addSuccess('Category Added Succesfully');
 
         return redirect()->back();
     }
@@ -109,7 +109,6 @@ public function view_user()
 
         $data->delete();
 
-        toastr()->timeOut(10000)->closeButton()->addSuccess('Category Deleted Succesfully');
 
         return redirect()->back();
     }
@@ -150,7 +149,6 @@ public function view_user()
 
         $news->save();
 
-        toastr()->timeOut(10000)->closeButton()->addSuccess('News Post Added Succesfully');
 
         return redirect()->back();
     }
@@ -161,7 +159,6 @@ public function view_user()
 
         $data->delete();
 
-        toastr()->timeOut(10000)->closeButton()->addSuccess('News Post Deleted Succesfully');
 
         return redirect()->back();
     }
@@ -213,7 +210,6 @@ public function view_user()
 
         $faqCategory->save();
 
-        toastr()->timeOut(10000)->closeButton()->addSuccess('FAQ Category Added Succesfully');
 
         return redirect()->back();
     }
@@ -224,7 +220,6 @@ public function view_user()
 
         $data->delete();
 
-        toastr()->timeOut(10000)->closeButton()->addSuccess('FAQ Category Deleted Succesfully');
 
         return redirect()->back();
     }
@@ -391,6 +386,37 @@ public function edit_faqItem(Request $request,$id)
     
     $data->save();
     return redirect('/view_faqItem');
+}
+
+//Orders
+
+public function view_orders()
+{
+
+    $data = Order::all();
+
+    return view('admin.orders',compact('data'));
+
+}
+
+public function on_the_way($id)
+{
+    $data = Order::find($id);
+    $data->status = 'On the way';
+
+    $data->save();
+
+    return redirect('/view_orders');
+}
+
+public function delivered($id)
+{
+    $data = Order::find($id);
+    $data->status = 'Delivered';
+
+    $data->save();
+
+    return redirect('/view_orders');
 }
 
 }

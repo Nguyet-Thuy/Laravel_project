@@ -45,6 +45,23 @@
         padding: 18px;
     }
 
+    .order_deg 
+    {
+        padding-right: 100px;
+        margin-top: -50px;
+    }
+
+    label 
+    {
+        display: inline-block;
+        width: 150px;
+    }
+
+    .div_gap 
+    {
+        padding: 20px;
+    }
+
     </style>
 
 </head>
@@ -60,6 +77,29 @@
   </div>
 
     <div class="div_deg">
+
+    <div class="order_deg">
+
+    <form action="{{url('confirm_order')}}" method="Post">
+        @csrf
+
+    <div class="div_gap">
+        <label>Naam klant</label>
+        <input type="text" name="name" value="{{Auth::user()->name}}">
+    </div>
+    <div class="div_gap">
+        <label>Adres klant</label>
+        <textarea name="address" >{{Auth::user()->address}}</textarea>
+    </div>
+    <div class="div_gap">
+        <label>Telefoonnummer klant</label>
+        <input type="text" name="phone" value="{{Auth::user()->phone}}">
+    </div>
+    <div class="div_gap">
+        <input class="btn btn-primary" type="submit" value="Nu kopen">
+    </div>
+    </form>
+    </div>
 
     <table>
         <tr>
@@ -86,7 +126,7 @@
             <td>
                 <img width="150" src="/products/{{$cart->product->image}}">
             </td>
-            <td><a class="btn btn-danger" onclick="return confirm('Ben je zeker dat je dit product uit de winkelwagen wilt verwijderen?')" href="{{url('delete_cart',$cart->id)}}">Verwijder product</a></td>
+            <td><a class="btn btn-danger" onclick="return confirm('Bent u zeker dat u dit product uit de winkelwagen wilt verwijderen?')" href="{{url('delete_cart',$cart->id)}}">Verwijder product</a></td>
 
         </tr>
 
@@ -108,9 +148,6 @@
 
   @include('home.footer')
 
-  
-
-  
 
 </body>
 

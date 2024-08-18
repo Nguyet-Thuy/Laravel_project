@@ -13,7 +13,7 @@
           <a class="nav-link" href="{{ route('home.index') }}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('news.index') }}">News Posts</a>
+          <a class="nav-link" href="{{ route('news.index') }}">Nieuws</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('faq.index') }}">FAQ</a>
@@ -27,7 +27,7 @@
           <!-- Display when user is logged in -->
           <a href="{{ route('profile.update') }}">
             <i class="fa fa-user" aria-hidden="true"></i>
-            <span>Profile</span>
+            <span>Profiel</span>
           </a>
 
           <a href="{{ route('logout') }}" class="logout-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
