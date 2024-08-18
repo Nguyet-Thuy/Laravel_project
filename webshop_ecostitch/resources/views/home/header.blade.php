@@ -35,7 +35,7 @@
             <span>Logout</span>
           </a>
 
-          <a href="#">
+          <a href="{{url('mycart')}}">
           <i class="fa fa-shopping-bag" aria-hidden="true"></i>
           {{$count}}
         </a>
@@ -55,11 +55,13 @@
             <i class="fa fa-vcard" aria-hidden="true"></i>
             <span>Register</span>
           </a>
-        @endauth
 
-        <a href="#">
+          <a href="#">
           <i class="fa fa-shopping-bag" aria-hidden="true"></i>
         </a>
+        @endauth
+
+        
         <form class="form-inline">
           <button class="btn nav_search-btn" type="submit">
             <i class="fa fa-search" aria-hidden="true"></i>

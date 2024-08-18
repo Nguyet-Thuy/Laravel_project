@@ -171,4 +171,10 @@ Route::get('/about', function () {return view('about');})->name('about');
 route::get('add_cart/{id}',[HomeController::class,'add_cart'])
 ->middleware(['auth', 'verified']);
 
+route::get('mycart',[HomeController::class,'mycart'])
+->middleware(['auth', 'verified']);
+
+route::get('delete_cart/{id}',[HomeController::class,'delete_cart'])
+->middleware(['auth', 'verified']);
+
 Route::get('/home', [HomeController::class, 'login_home'])->name('home.index');
