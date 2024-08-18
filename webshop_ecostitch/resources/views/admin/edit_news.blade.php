@@ -18,6 +18,14 @@
         width: 400px;
         height: 50px;
     }
+    label
+{
+    display: inline-block;
+    width: 200px;
+    font-size: 18px!important;
+    color: white!important;
+
+}
    </style>
 
   </head>

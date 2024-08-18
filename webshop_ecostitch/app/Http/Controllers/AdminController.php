@@ -41,6 +41,7 @@ public function view_user()
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->birthday = $request->birthday;
+        $user->password = $request->password;
 
         $user->save();
 

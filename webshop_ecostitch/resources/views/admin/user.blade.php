@@ -46,6 +46,15 @@
         padding: 10px;
         border: 1px solid skyblue;
     }
+
+    label
+{
+    display: inline-block;
+    width: 200px;
+    font-size: 18px!important;
+    color: white!important;
+
+}
     
     
    </style>

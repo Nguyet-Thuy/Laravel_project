@@ -4,6 +4,17 @@
 
    @include('admin.css')
 
+   <style type="text/css">
+
+.logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+</style>
+
   </head>
   <body>
 
@@ -16,7 +27,12 @@
         <div class="page-header">
           <div class="container-fluid">
 
-          @include('admin.body') 
+          <div class="logo">
+          <a href="{{ asset('images/favicon.png') }}">
+          <img width="400" src="{{ asset('images/favicon.png') }}" alt="Favicon">
+          </a>
+          </div>
+          
           </div>
       </div>
     </div>
