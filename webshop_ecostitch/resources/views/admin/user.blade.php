@@ -86,7 +86,7 @@
             <hr>
 
             <div> <label for="content">E-mail:</label>
-        <input type="text" name="email" id="email" required></div>
+        <input type="email" name="email" id="email" required></div>
             <hr>
 
             <div> <label for="content">Short Bio:</label>
@@ -101,7 +101,6 @@
             <div>
             <label>Role of User</label>
             <select name="usertype" required>
-                <option>Select a Option</option>
 
                 <option value="user">User</option>
                 <option value="admin">Admin</option>

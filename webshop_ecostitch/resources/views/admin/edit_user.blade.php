@@ -25,7 +25,12 @@
     width: 200px;
     font-size: 18px!important;
     color: white!important;
+    padding: 15px;
 
+}
+textarea{
+    width: 450px;
+    height: 80px;
 }
    </style>
 
@@ -48,41 +53,50 @@
           <form action="{{ url('update_user',$data->id) }}" method="post">
 
           @csrf
-
+            <div>
             <label for="title">Name:</label>
             <input type="text" name="name" value="{{$data->name}}">
-            <hr>
+            </div>
+            <div>
             <label for="title">E-mail:</label>
-            <input type="text" name="email" value="{{$data->email}}">
-            <hr>
+            <input type="email" name="email" value="{{$data->email}}">
+            </div>
+            <div>
             <label for="title">Short Bio:</label>
-            <input type="text" name="bio" value="{{$data->bio}}">
-            <hr>
+            <textarea name="bio" value="{{$data->bio}}"></textarea>
+            </div>
+            <div>
             <label for="title">Avatar:</label>
-            <input type="text" name="avatar" value="{{$data->avatar}}">
-            <hr>
+            <input type="file" name="avatar" value="{{$data->avatar}}">
+            </div>
+            <div>
             <label>Role of User</label>
             <select name="usertype" required>
-                <option>Select a Option</option>
 
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
 
             </select>
-            <hr>
+            </div>
+            <div>
             <label for="title">Phone number:</label>
             <input type="text" name="phone" value="{{$data->phone}}">
-            <hr>
+            </div>
+            <div>
             <label for="title">Address:</label>
             <input type="text" name="address" value="{{$data->address}}">
-            <hr>
+            </div>
+            <div>
             <label for="title">Birthday:</label>
-            <input type="text" name="birthday" value="{{$data->birthday}}">
-            <hr>
+            <input type="date" name="birthday" value="{{$data->birthday}}">
+            </div>
+            <div>
             <label for="password" style="display: none;">Password:</label>
             <input type="password" id="password" name="password" style="display: none;" required>
-            <hr>
-            <input class="btn btn-primary"type="submit" value="Edit News Post">
+            </div>
+            <div>
+            <input class="btn btn-primary"type="submit" value="Edit User">
+            </div>
           </form>
 
           </div>
