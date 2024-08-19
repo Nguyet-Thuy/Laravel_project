@@ -70,6 +70,27 @@
         <li><strong>Contact Form Management:</strong> Admins can view and respond to messages submitted through the contact form, ensuring prompt communication with our customers.</li>
     </ul>
 
+    <h2>Here are some guidelines to smoothly explore and manage the website:</h2>
+    <h3>Exploring the Website</h3>
+    <ul>
+        <li><strong>Initial Seeders and Migrations:</strong> Basic seeders have been set up, including an admin account and a few user accounts. Product categories and FAQ categories are also configured. Run the following command to migrate the database and seed it: <code>php artisan migrate:fresh --seed</code>.</li>
+        <li><strong>Logging in as Admin:</strong> Log in as an admin using the following credentials:
+            <ul>
+                <li><strong>Email:</strong> admin@ehb.be</li>
+                <li><strong>Password:</strong> Password!321</li>
+            </ul>
+        </li>
+        <li><strong>Admin Panel:</strong> In the admin panel, you can create and manage various items, such as:
+            <ul>
+                <li><strong>News Posts:</strong> Add news posts using images found in the <code>public/nieuws</code> directory.</li>
+                <li><strong>Users:</strong> Manage user information in the <code>public/user</code> directory.</li>
+                <li><strong>Products:</strong> Add products using images located in the <code>public/products</code> directory.</li>
+                <li><strong>FAQ Questions and Answers:</strong> Manage FAQs by adding, editing, or deleting questions and answers.</li>
+            </ul>
+        </li>
+        <li><strong>Functionality Testing:</strong> After completing the admin tasks, log out and navigate to the homepage. You can then test the remaining functionalities of the website as a logged in user and a non logged in user.</li>
+    </ul>
+
     <h2>Technical Details</h2>
     <p>This webshop is built with Laravel 11 Breeze for a streamlined authentication process and Bootstrap for responsive, stylish design. We ensure secure transactions and data handling, with features such as:</p>
     <ul>
@@ -83,7 +104,7 @@
 
     <h2>References</h2>
     <ul>
-        <li><a href="https://laravel.com/docs/11.x" target="_blank">Laravel Documentation</a></li>
+        <li><a href="https://laravel.com/" target="_blank">Laravel Documentation</a></li>
         <li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">Bootstrap Documentation</a></li>
         <li><a href="https://laravel.com/docs/11.x/starter-kits#laravel-breeze" target="_blank">Laravel Breeze</a></li>
         <li><a href="https://www.youtube.com/playlist?list=PLm8sgxwSZofdmlPxaDB7fRLv_NVe2uFKl" target="_blank">Laravel 11 E-commerce Project Tutorial

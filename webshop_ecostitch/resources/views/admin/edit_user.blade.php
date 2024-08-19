@@ -63,7 +63,7 @@ textarea
             </div>
             <div>
             <label for="title">Short Bio:</label>
-            <textarea name="bio" value="{{$data->bio}}"></textarea>
+            <textarea name="bio">{{$data->bio}}</textarea>
             </div>
             <div>
             <label for="title">Avatar:</label>

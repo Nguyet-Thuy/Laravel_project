@@ -57,7 +57,7 @@
 
    @include('admin.sidebar') 
 
-      <!-- Sidebar Navigation end-->
+      
       <div class="page-content">
         <div class="page-header">
           <div class="container-fluid">

@@ -35,6 +35,7 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 
 //User
+
 route::get('view_user',[AdminController::class,'view_user'])-> 
     middleware(['auth','admin']);
 
@@ -72,7 +73,7 @@ route::post('update_category/{id}',[AdminController::class,'update_category'])->
     middleware(['auth','admin']);
 
 
-    //News Posts
+//News Posts
 
 route::get('view_news',[AdminController::class,'view_news'])-> 
     middleware(['auth','admin']);
@@ -92,7 +93,7 @@ route::get('update_news/{id}',[AdminController::class,'update_news'])->
 route::post('upload_news',[AdminController::class,'upload_news'])-> 
     middleware(['auth','admin']);
 
-    //Contact
+//Contact
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
@@ -100,13 +101,14 @@ route::get('view_contact',[AdminController::class,'view_contact'])->
     middleware(['auth','admin']);
 
 
-    //News
+//News
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 
 Route::get('/home', [HomeController::class, 'home'])->name('home.index');
 
 
-    //faqCategory
+//faqCategory
+
 route::get('view_faqCategory',[AdminController::class,'view_faqCategory'])-> 
     middleware(['auth','admin']);
 

@@ -38,7 +38,7 @@
 
           <form action="{{ url('update_faqCategory', $data->id) }}" method="POST">
     @csrf
-    @method('PUT') <!-- This ensures that the form submits as an UPDATE request -->
+    @method('PUT') 
 
     <label for="title">FAQ Category:</label>
     <input type="text" name="faqCategory_name" value="{{ $data->faqCategory_name }}" required>

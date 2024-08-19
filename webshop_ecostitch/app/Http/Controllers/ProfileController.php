@@ -46,16 +46,12 @@ class ProfileController extends Controller
             $user->avatar = $avatarPath;
         }
 
-        // Sla de wijzigingen op
+       
         $user->save();
 
-        // Redirect naar de profielpagina met een succesmelding
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
