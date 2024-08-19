@@ -25,18 +25,20 @@
               CONTACTEER ONS
             </h6>
             <div class="info_link-box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <div>
+                <i class="" aria-hidden="true"></i>
                 <span> Markebekestraat 115 8510 Marke België </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <hr>
+                <div>
+                <i class="" aria-hidden="true"></i>
                 <span>056/84.64.75</span>
-              </a>
-              <a href="">
+                </div>
+                <hr>
+                <div>
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span> ecostitchcreations@gmail.com</span>
-              </a>
+                </div>
             </div>
           </div>
         </div>
