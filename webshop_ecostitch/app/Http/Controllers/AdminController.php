@@ -18,7 +18,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        // Your code here
+        
         return view('admin.index');
     }
 
