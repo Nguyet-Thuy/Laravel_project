@@ -76,7 +76,7 @@
           <div class="div_deg">
 
             
-          <form action="{{url('add_user')}}" method="post" enctype="multipart/form-data">
+          <form action="{{url('upload_user')}}" method="post" enctype="multipart/form-data">
 
           @csrf
             <div>
@@ -148,25 +148,25 @@
                         <th>Delete</th>
                     </tr>
 
-                    @foreach($data as $data)
+                    @foreach($user as $users)
 
                     <tr>
-                        <td>{{$data->name}}</td>
-                        <td>{{$data->email}}</td>
-                        <td>{{$data->bio}}</td>
+                        <td>{{$users->name}}</td>
+                        <td>{{$users->email}}</td>
+                        <td>{{$users->bio}}</td>
                         <td>
-                            <img height="150" width="150" src="profilePictures/{{$data->avatar}}">
+                            <img height="150" width="150" src="user/{{$users->avatar}}">
                         </td>
-                        <td>{{$data->usertype}}</td>
-                        <td>{{$data->phone}}</td>
-                        <td>{{$data->address}}</td>
-                        <td>{{$data->birthday}}</td>
+                        <td>{{$users->usertype}}</td>
+                        <td>{{$users->phone}}</td>
+                        <td>{{$users->address}}</td>
+                        <td>{{$users->birthday}}</td>
                       
                         <td>
-                            <a class="btn btn-success" href="{{url('edit_user',$data->id)}},">Edit</a>
+                            <a class="btn btn-success" href="{{url('update_user',$users->id)}},">Edit</a>
                         </td>
                         <td>
-                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_user',$data->id)}}">Delete</a>
+                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_user',$users->id)}}">Delete</a>
                         </td>
                     </tr>
                     

@@ -25,8 +25,8 @@ class AdminController extends Controller
 //User
 public function view_user()
     {
-        $data = User::all();
-        return view('admin.user',compact('data'));
+        $user = User::all();
+        return view('admin.user',compact('user'));
     }
 
     public function add_user(Request $request)
@@ -36,7 +36,6 @@ public function view_user()
         $user->name = $request->name;
         $user->email = $request->email;
         $user->bio = $request->bio;
-        $user->avatar = $request->avatar;
         $user->usertype = $request->usertype;
         $user->phone = $request->phone;
         $user->address = $request->address;
@@ -48,9 +47,8 @@ public function view_user()
         if($image)
         {
             $imagename = time().'.'.$image->getClientOriginalExtension();
-            $request->avatar->move('profilePictures',$imagename);
-
-            $user->avatar = $imagename;
+            $request->avatar->move('user',$imagename);
+            $data->avatar = $imagename;
         }
 
         $user->save();
@@ -69,29 +67,66 @@ public function view_user()
         return redirect()->back();
     }
 
-    public function edit_user($id)
+    public function update_user($id)
     {
         $data = User::find($id);
 
         return view('admin.edit_user', compact('data'));
     }
 
-    public function update_user(Request $request,$id)
+    public function edit_user(Request $request,$id)
     {
-        $data= User::find($id);
+        $data = User::find($id);
 
         $data->name = $request->name;
         $data->email = $request->email;
         $data->bio = $request->bio;
-        $data->avatar = $request->avatar;
         $data->usertype = $request->usertype;
         $data->phone = $request->phone;
         $data->address = $request->address;
         $data->birthday = $request->birthday;
+        $data->password = $request->password;
+
+        $image = $request->cover_image;
+
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+    
+            $request->avatar->move('user',$imagename);
+    
+            $data->avatar = $imagename;
+        }
 
         $data->save();
 
         return redirect('/view_user');
+    }
+
+    public function upload_user(Request $request)
+    {
+        $data = new User;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->bio = $request->bio;
+        $data->usertype = $request->usertype;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+        $data->birthday = $request->birthday;
+        $data->password = $request->password;
+
+        $image = $request->avatar;
+
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->avatar->move('user',$imagename);
+            $data->avatar = $imagename;
+        }
+
+        $data->save();
+
+        return redirect()->back();
     }
 
 
@@ -145,8 +180,8 @@ public function view_user()
     //News Posts
     public function view_news()
     {
-        $data = News::all();
-        return view('admin.news',compact('data'));
+        $news = News::all();
+        return view('admin.news',compact('news'));
     }
 
     public function add_news(Request $request)
@@ -154,9 +189,19 @@ public function view_user()
         $news = new News;
 
         $news->title = $request->title;
-        $news->cover_image = $request->cover_image;
         $news->content = $request->content;
         $news->publishing_date = $request->publishing_date;
+
+        $image = $request->image;
+
+    if($image)
+    {
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+
+        $request->cover_image->move('news',$imagename);
+
+        $news->image = $imagename;
+    }
 
         $news->save();
 
@@ -174,25 +219,56 @@ public function view_user()
         return redirect()->back();
     }
 
-    public function edit_news($id)
+    public function update_news($id)
     {
         $data = News::find($id);
 
         return view('admin.edit_news', compact('data'));
     }
 
-    public function update_news(Request $request,$id)
+    public function edit_news(Request $request,$id)
     {
         $data= News::find($id);
 
         $data->title = $request->title;
-        $data->cover_image = $request->cover_image;
         $data->content = $request->content;
         $data->publishing_date = $request->publishing_date;
+
+        $image = $request->cover_image;
+
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+    
+            $request->cover_image->move('news',$imagename);
+    
+            $data->cover_image = $imagename;
+        }
 
         $data->save();
 
         return redirect('/view_news');
+    }
+
+    public function upload_news(Request $request)
+    {
+        $data = new News;
+        $data->title = $request->title;
+        $data->content = $request->content;
+        $data->publishing_date = $request->publishing_date;
+
+        $image = $request->cover_image;
+
+        if($image)
+        {
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            $request->cover_image->move('news',$imagename);
+            $data->cover_image = $imagename;
+        }
+
+        $data->save();
+
+        return redirect()->back();
     }
 
     //Contact

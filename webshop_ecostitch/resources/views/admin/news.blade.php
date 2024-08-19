@@ -75,7 +75,7 @@
           <div class="div_deg">
 
             
-          <form action="{{url('add_news')}}" method="post">
+          <form action="{{url('upload_news')}}" method="post" enctype="multipart/form-data">
 
           @csrf
             <div>
@@ -110,19 +110,21 @@
                         <th>Delete</th>
                     </tr>
 
-                    @foreach($data as $data)
+                    @foreach($news as $newss)
 
                     <tr>
-                        <td>{{$data->title}}</td>
-                        <td>{{$data->cover_image}}</td>
-                        <td>{{$data->content}}</td>
-                        <td>{{$data->publishing_date}}</td>
+                        <td>{{$newss->title}}</td>
+                        <td>
+                            <img width="150" height="150" src="news/{{$newss->cover_image}}">
+                        </td>
+                        <td>{{$newss->content}}</td>
+                        <td>{{$newss->publishing_date}}</td>
                       
                         <td>
-                            <a class="btn btn-success" href="{{url('edit_news',$data->id)}},">Edit</a>
+                            <a class="btn btn-success" href="{{url('update_news',$newss->id)}},">Edit</a>
                         </td>
                         <td>
-                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_news',$data->id)}}">Delete</a>
+                            <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_news',$newss->id)}}">Delete</a>
                         </td>
                     </tr>
                     

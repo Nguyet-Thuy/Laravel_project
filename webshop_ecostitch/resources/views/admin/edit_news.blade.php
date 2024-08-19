@@ -6,27 +6,32 @@
 
    <style type="text/css">
     .div_deg
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 60px;
-    }
-
-    input[type='text']
-    {
-        width: 400px;
-        height: 50px;
-    }
-    label
 {
-    display: inline-block;
-    width: 200px;
-    font-size: 18px!important;
-    color: white!important;
+    diplay: flex;
+    justify-content: center;
+    align-items: center;
+}    
 
+label 
+{
+    display: inline_block;
+    width: 200px;
+    padding: 20px;
 }
-   </style>
+
+input[type='text']
+{
+    width: 300px;
+    heigth: 50px;
+}
+
+textarea
+{
+    width: 450px;
+    height: 100px;
+}
+
+</style>
 
   </head>
   <body>
@@ -44,23 +49,32 @@
 
           <h1 style="color: white">Edit News Post</h1>
 
-          <form action="{{ url('update_news',$data->id) }}" method="post">
+          <form action="{{ url('edit_news',$data->id) }}" method="post" enctype="multipart/form-data">
 
           @csrf
-
+            <div>
             <label for="title">Title:</label>
             <input type="text" name="title" value="{{$data->title}}">
-            <hr>
+            </div>
+            <div>
             <label for="title">Cover Image:</label>
-            <input type="text" name="cover_image" value="{{$data->cover_image}}">
-            <hr>
+            <img width="150" src="/news/{{$data->cover_image}}">
+            </div>
+            <div>
+              <label for="">New Image:</label>
+              <input type="file" name="cover_image">
+            </div>
+            <div>
             <label for="title">Content:</label>
             <input type="text" name="content" value="{{$data->content}}">
-            <hr>
+            </div>
+            <div>
             <label for="title">Publishing Date:</label>
             <input type="text" name="publishing_date" value="{{$data->publishing_date}}">
-            <hr>
+            </div>
+            <div>
             <input class="btn btn-primary"type="submit" value="Edit News Post">
+            </div>
           </form>
 
           </div>

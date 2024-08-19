@@ -44,10 +44,13 @@ route::post('add_user',[AdminController::class,'add_user'])->
 route::get('delete_user/{id}',[AdminController::class,'delete_user'])-> 
     middleware(['auth','admin']);
 
-route::get('edit_user/{id}',[AdminController::class,'edit_user'])-> 
+route::post('edit_user/{id}',[AdminController::class,'edit_user'])-> 
     middleware(['auth','admin']);
 
-route::post('update_user/{id}',[AdminController::class,'update_user'])-> 
+route::get('update_user/{id}',[AdminController::class,'update_user'])-> 
+    middleware(['auth','admin']);
+
+route::post('upload_user',[AdminController::class,'upload_user'])-> 
     middleware(['auth','admin']);
 
 //Product Category
@@ -80,10 +83,13 @@ route::post('add_news',[AdminController::class,'add_news'])->
 route::get('delete_news/{id}',[AdminController::class,'delete_news'])-> 
     middleware(['auth','admin']);
 
-route::get('edit_news/{id}',[AdminController::class,'edit_news'])-> 
+route::post('edit_news/{id}',[AdminController::class,'edit_news'])-> 
     middleware(['auth','admin']);
 
-route::post('update_news/{id}',[AdminController::class,'update_news'])-> 
+route::get('update_news/{id}',[AdminController::class,'update_news'])-> 
+    middleware(['auth','admin']);
+
+route::post('upload_news',[AdminController::class,'upload_news'])-> 
     middleware(['auth','admin']);
 
     //Contact

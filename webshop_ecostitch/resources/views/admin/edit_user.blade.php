@@ -6,32 +6,32 @@
 
    <style type="text/css">
     .div_deg
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 60px;
-    }
-
-    input[type='text']
-    {
-        width: 400px;
-        height: 50px;
-    }
-
-    label
 {
-    display: inline-block;
-    width: 200px;
-    font-size: 18px!important;
-    color: white!important;
-    padding: 15px;
+    diplay: flex;
+    justify-content: center;
+    align-items: center;
+}    
 
+label 
+{
+    display: inline_block;
+    width: 200px;
+    padding: 20px;
 }
-textarea{
+
+input[type='text']
+{
+    width: 300px;
+    heigth: 50px;
+}
+
+textarea
+{
     width: 450px;
-    height: 80px;
+    height: 100px;
 }
+
+</style>
    </style>
 
   </head>
@@ -50,7 +50,7 @@ textarea{
 
           <h1 style="color: white">Edit User</h1>
 
-          <form action="{{ url('update_user',$data->id) }}" method="post" enctype="multipart/form-data">
+          <form action="{{ url('edit_user',$data->id) }}" method="post" enctype="multipart/form-data">
 
           @csrf
             <div>
@@ -67,7 +67,11 @@ textarea{
             </div>
             <div>
             <label for="title">Avatar:</label>
-            <input type="file" name="avatar" value="{{$data->avatar}}">
+            <img width="150" src="/user/{{$data->avatar}}">
+            </div>
+            <div>
+              <label for="">New Avatar:</label>
+              <input type="file" name="avatar">
             </div>
             <div>
             <label>Role of User</label>
@@ -89,6 +93,10 @@ textarea{
             <div>
             <label for="title">Birthday:</label>
             <input type="date" name="birthday" value="{{$data->birthday}}">
+            </div>
+            <div>
+            <label for="title">Password:</label>
+            <input type="password" name="password" value="{{$data->password}}">
             </div>
             <div>
             <input class="btn btn-primary"type="submit" value="Edit User">
