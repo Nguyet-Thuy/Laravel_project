@@ -85,9 +85,8 @@ public function view_user()
         $data->phone = $request->phone;
         $data->address = $request->address;
         $data->birthday = $request->birthday;
-        $data->password = $request->password;
 
-        $image = $request->cover_image;
+        $image = $request->avatar;
 
         if($image)
         {
@@ -113,7 +112,6 @@ public function view_user()
         $data->phone = $request->phone;
         $data->address = $request->address;
         $data->birthday = $request->birthday;
-        $data->password = $request->password;
 
         $image = $request->avatar;
 

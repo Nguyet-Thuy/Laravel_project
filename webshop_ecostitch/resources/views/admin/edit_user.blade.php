@@ -95,10 +95,6 @@ textarea
             <input type="date" name="birthday" value="{{$data->birthday}}">
             </div>
             <div>
-            <label for="title">Password:</label>
-            <input type="password" name="password" value="{{$data->password}}">
-            </div>
-            <div>
             <input class="btn btn-primary"type="submit" value="Edit User">
             </div>
           </form>
