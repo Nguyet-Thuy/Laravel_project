@@ -58,7 +58,7 @@ textarea
             </div>
             <div>
             <label for="title">Cover Image:</label>
-            <img width="150" src="/news/{{$data->cover_image}}">
+            <img width="150" src="/nieuws/{{$data->cover_image}}">
             </div>
             <div>
               <label for="">New Image:</label>

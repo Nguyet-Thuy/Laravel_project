@@ -204,7 +204,7 @@ public function view_user()
     {
         $imagename = time().'.'.$image->getClientOriginalExtension();
 
-        $request->cover_image->move('news',$imagename);
+        $request->cover_image->move('nieuws',$imagename);
 
         $news->image = $imagename;
     }
@@ -219,7 +219,7 @@ public function view_user()
     {
         $data = News::find($id);
 
-        $image_path = public_path('news/'.$data->cover_image);
+        $image_path = public_path('nieuws/'.$data->cover_image);
 
             if(file_exists($image_path))
             {
@@ -253,7 +253,7 @@ public function view_user()
         {
             $imagename = time().'.'.$image->getClientOriginalExtension();
     
-            $request->cover_image->move('news',$imagename);
+            $request->cover_image->move('nieuws',$imagename);
     
             $data->cover_image = $imagename;
         }
@@ -275,7 +275,7 @@ public function view_user()
         if($image)
         {
             $imagename = time().'.'.$image->getClientOriginalExtension();
-            $request->cover_image->move('news',$imagename);
+            $request->cover_image->move('nieuws',$imagename);
             $data->cover_image = $imagename;
         }
 

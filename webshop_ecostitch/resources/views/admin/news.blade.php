@@ -115,7 +115,7 @@
                     <tr>
                         <td>{{$newss->title}}</td>
                         <td>
-                            <img width="150" height="150" src="news/{{$newss->cover_image}}">
+                            <img width="150" height="150" src="nieuws/{{$newss->cover_image}}">
                         </td>
                         <td>{{$newss->content}}</td>
                         <td>{{$newss->publishing_date}}</td>

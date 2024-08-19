@@ -31,10 +31,12 @@
                         </div>
                         <i class="fa fa-quote-left" aria-hidden="true"></i>
                     </div>
+                    <div>
                     <p>{{ $article->content }}</p>
                     @if($article->cover_image)
-                        <img src="{{ asset('storage/' . $article->cover_image) }}" alt="{{ $article->title }}" class="img-fluid">
+                        <img width="150" src="{{ asset('nieuws/' . $article->cover_image) }}" alt="{{ $article->title }}" class="img-fluid">
                     @endif
+                    </div>
                 </div>
             @endforeach
         </div>
