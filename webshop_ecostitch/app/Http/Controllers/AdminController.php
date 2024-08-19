@@ -61,6 +61,14 @@ public function view_user()
     {
         $data = User::find($id);
 
+        $image_path = public_path('user/'.$data->avatar);
+
+            if(file_exists($image_path))
+            {
+                unlink($image_path);
+            }
+
+
         $data->delete();
 
 
@@ -210,6 +218,13 @@ public function view_user()
     public function delete_news($id)
     {
         $data = News::find($id);
+
+        $image_path = public_path('news/'.$data->cover_image);
+
+            if(file_exists($image_path))
+            {
+                unlink($image_path);
+            }
 
         $data->delete();
 
